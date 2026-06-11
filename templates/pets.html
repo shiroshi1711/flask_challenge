@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pets</title>
+    </head>
+
+    <body>
+        <ul>
+            {%for pet in pets%}
+            <li>{{pet[1]|capitalize}} -- {{pet[2]|capitalize}}
+                <a href="/delete/{{pet[1]}}">delete</a>
+            </li>
+            {%endfor%}
+        </ul>
+
+    <form action="/add" method="POST">
+    <input type="text" name="pet_name" placeholder="Pet name">
+    <input type="text" name="species" placeholder="Species">
+    <button type="submit">Add Pet!!</button>
+</form>
+<br>
+<a href="/">Back</a>
+    </body>
+</html>
